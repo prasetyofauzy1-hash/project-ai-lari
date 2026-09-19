@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101917" />
+    <title>Stridewise | Personal Running Coach</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand"><span class="brand-mark">S</span><span>stridewise</span></div>
+        <p class="eyebrow">PERSONAL RUNNING COACH</p>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a class="nav-item active" href="#dashboard"><span class="nav-icon">⌂</span>Dashboard</a>
+          <a class="nav-item" href="#activities"><span class="nav-icon">↗</span>Activities</a>
+          <a class="nav-item" href="#plan"><span class="nav-icon">▦</span>Training plan</a>
+          <a class="nav-item" href="#coach"><span class="nav-icon">✦</span>AI Coach</a>
+          <a class="nav-item" href="#settings"><span class="nav-icon">⚙</span>Settings</a>
+        </nav>
+        <div class="sidebar-footer">
+          <div class="sync-status"><span class="pulse"></span><span>Local sample data</span></div>
+          <div class="profile-mini"><span class="avatar">R</span><span><strong>Runner</strong><small>Base building</small></span></div>
+        </div>
+      </aside>
+
+      <main class="main-content" id="dashboard">
+        <header class="topbar">
+          <div><p class="eyebrow">MONDAY, SEPTEMBER 21, 2026</p><h1>Good morning, Runner.</h1></div>
+          <button class="icon-button" aria-label="Notifications">◌<span class="notification-dot"></span></button>
+        </header>
+
+        <section class="hero-grid">
+          <div class="hero-panel">
+            <div class="hero-copy"><p class="eyebrow accent">WEEKLY SNAPSHOT</p><h2>Build your week<br /><em>with intention.</em></h2><p class="hero-note">Your training is trending in the right direction. A steady week now sets up your next breakthrough.</p></div>
+            <div class="hero-orbit"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="runner-line">↗</div><span class="orbit-label">WEEK 38</span></div>
+          </div>
+          <div class="coach-note" id="coach"><div class="note-heading"><span class="sparkle">✦</span><span>COACH'S NOTE</span><span class="note-line"></span></div><p id="recommendation">Loading your recommendation...</p><a href="#plan" class="text-link">View adjusted plan <span>→</span></a></div>
+        </section>
+
+        <section class="metric-grid" aria-label="Weekly metrics">
+          <article class="metric-card highlight"><div class="metric-label"><span class="metric-dot"></span>WEEKLY DISTANCE</div><strong id="weekly-distance">--</strong><span class="metric-unit">km</span><div class="spark-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small id="week-range">This week</small></article>
+          <article class="metric-card"><div class="metric-label"><span class="metric-dot coral"></span>TRAINING LOAD</div><strong id="training-load">--</strong><span class="metric-unit">/ 300</span><div class="load-track"><span id="load-bar"></span></div><small>Balanced range</small></article>
+          <article class="metric-card"><div class="metric-label"><span class="metric-dot blue"></span>AVG PACE</div><strong id="avg-pace">--</strong><span class="metric-unit">/ km</span><div class="metric-trend">↘ <span>Improving</span></div><small id="training-details">Across running sessions</small></article>
+          <article class="metric-card"><div class="metric-label"><span class="metric-dot gold"></span>RECOVERY</div><strong id="recovery">--</strong><div class="recovery-ring"><span id="recovery-score">--</span></div><small>Based on recent load</small></article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel activities-panel" id="activities"><div class="panel-header"><div><p class="eyebrow">RECENT TRAINING</p><h3>Activity log</h3></div><a href="#activities" class="text-link">See all <span>→</span></a></div><div class="activity-list" id="activity-list"><div class="loading-row">Loading activity data...</div></div></article>
+          <article class="panel next-panel" id="plan"><div class="panel-header"><div><p class="eyebrow">UP NEXT</p><h3>Training plan</h3></div><span class="date-chip">SEP 21 — 27</span></div><div class="plan-list" id="plan-list"><div class="loading-row">Loading plan...</div></div></article>
+        </section>
+
+        <section class="bottom-strip" id="settings"><div><span class="strip-icon">⌁</span><span><strong>Garmin connection</strong><small id="garmin-status">Checking integration settings...</small></span></div><button class="outline-button" id="garmin-connect">Open Garmin setup</button></section>
+        <div class="activity-modal" id="activity-modal" hidden>
+          <div class="modal-backdrop" data-close-modal></div>
+          <section class="activity-dialog" role="dialog" aria-modal="true" aria-labelledby="activity-title">
+            <button class="modal-close" type="button" aria-label="Close activity details" data-close-modal>×</button>
+            <p class="eyebrow">ACTIVITY DETAIL</p>
+            <h2 id="activity-title">Loading activity...</h2>
+            <p class="modal-subtitle" id="activity-subtitle"></p>
+            <div class="detail-metrics" id="detail-metrics"></div>
+            <div class="split-header"><span>KM SPLITS</span><span>PACE / KM</span></div>
+            <div class="split-list" id="split-list"></div>
+          </section>
+        </div>
+        <footer><span>STRIDEWISE / MVP 0.1</span><span>Data is for training guidance, not medical advice.</span></footer>
+      </main>
+    </div>
+    <script src="/assets/app.js"></script>
+  </body>
+</html>
